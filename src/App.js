@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Admin, Resource } from 'react-admin';
+import { authProvider } from './provider/authProvider';
+import { userList, userCreate, userEdit } from './users';
+import movieFavorite from './movieFavorite';
+import dataProvider from './provider/dataProvider';
+import refreshedMoviesReducer from './refreshedMoviesReducer';
+import movieList from './movieList';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import UserIcon from '@material-ui/icons/Group';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// username=admin@gmail.com
+// password = 12345678
+
+class App extends Component {
+  render() {
+    return (
+      <Admin
+        customReducers={{ refreshedMoviesReducer }}
+        authProvider={authProvider}
+        dataProvider={dataProvider}
+      >
+        <Resource name="movies" list={movieList} icon={DashboardIcon} />
+        <Resource name="users" list={userList} create={userCreate} edit={userEdit} icon={UserIcon} />
+        <Resource name="favorites" list={movieFavorite} icon={FavoriteIcon} />
+      </Admin>
+    );
+  }
 }
 
 export default App;

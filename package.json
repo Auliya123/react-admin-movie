@@ -1,14 +1,27 @@
 {
-  "name": "react-movie",
+  "name": "firebase",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.9.14",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "dotenv": "^8.2.0",
+    "firebase": "^7.14.4",
+    "firebase-admin": "^8.12.1",
+    "http2": "^3.3.7",
+    "material-ui": "^0.20.2",
+    "prop-types": "^15.7.2",
+    "ra-data-json-server": "^3.5.2",
     "react": "^16.13.1",
+    "react-admin": "^3.5.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-notification-system": "^0.4.0",
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.1",
+    "react-stack-grid": "^0.7.1",
+    "truncate": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
